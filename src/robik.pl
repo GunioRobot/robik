@@ -43,7 +43,7 @@ sub usermode
 	foreach my $op_match (@config::ops) {
 		if ($ident =~ $op_match) {
 			$conn->mode ($chan, '+o', $nick);
-		}		
+		}
 	}
 }
 
@@ -65,7 +65,7 @@ sub pocasie
 	unless ($argument) {
 		return "Skus takto: pocasie <miesto>";
 	}
-    
+
 	my $weather = Weather::Underground->new (
 		'place'	=> $argument,
 		'debug'	=> 0,
@@ -226,7 +226,7 @@ sub logit
 
 	my $date = `date '+%D %T'`; chomp $date;
 	my $logline = "$date ".$event->type.":\t";
-	
+
 	foreach ($event->args) {
 		$logline .= "\t$_";
 	}

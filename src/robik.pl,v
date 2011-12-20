@@ -58,7 +58,7 @@ my $conn = $irc->newconn (
 $conn->add_handler('public', \&msg);
 $conn->add_handler('msg', \&msg);
 $conn->add_default_handler(\&logit);
-# nicknameinuse endofmotd motd 
+# nicknameinuse endofmotd motd
 
 $conn->join ('#testbed');
 $conn->join ('#NetBSD.sk');
@@ -137,7 +137,7 @@ sub logit
 
 	my $date = `date '+%D %T'`;
 	chomp $date;
-	
+
 	print $event->type."\n";
 	open (LOG, '>>robik.log');
 	print LOG $date.' '.$event->type.":\t";
